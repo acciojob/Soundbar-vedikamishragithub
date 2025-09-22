@@ -1,10 +1,16 @@
 /*  your css code here. If applicable */
 #buttons{
   width:100vw;
-   height:100vh;
+  height:100vh;
   display:flex;
   align-items:center;
   justify-content:space-around;
+  background-color:#b366ff;
 	
 	
+}
+.btn{
+background-color:#8c1aff;
+height:2rem;
+width:4rem;	
 }
