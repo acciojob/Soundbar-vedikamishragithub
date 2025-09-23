@@ -1,24 +1,38 @@
-/*  your css code here. If applicable */
-*{
-  margin: 0px;
-  padding: 0px;
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-#buttons{
-  width:100vw;
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:space-around;
-  background-color:#b366ff;
-	
-	
+
+/* Flex container for buttons */
+#buttons {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #b366ff;
 }
-.btn{
-background-color:#8c1aff;
-height:2rem;
-width:4rem;
-box-shadow: none;         
-outline: none;
-border:none;	
+
+/* Button styling */
+#buttons .btn {
+  padding: 10px 20px;
+  background-color:#8c1aff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
 }
+
+/* Stop button styling */
+#stopBtn {
+  padding: 10px 20px;
+  background-color:#8c1aff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-shrink: 0; /* Prevent stop button from shrinking */
+}
+
 
