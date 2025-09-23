@@ -1,4 +1,4 @@
-
+<script>
   const button=document.getElementById('button');
   const applauseBtn = document.getElementById("applauseBtn");
   const booBtn = document.getElementById("booBtn");
@@ -8,17 +8,21 @@
   const wrongBtn = document.getElementById("wrongBtn");
   const stopBtn = document.getElementById("stopBtn");
 
- let currentSound = null;
+ const audioPlayer = new Audio();
+const buttons = document.querySelectorAll('.btn');
+const currentSound=null;
 
 button.forEach(button=>{
 	button.addEventListener('click',()=>{
-          audioPlayer.pause();
-          audioPlayer.currentTime = 0;
+        is(currentSound){
+			 audioSound.pause();
+          audioSound.currentTime = 0;
+		} 
 
 		    const soundFile = button.getAttribute('data-sound');
             audioSource.src = `sounds/${soundFile}`;
-		    audioPlayer.load();
-		    audioPlayer.play();    
+		    audioSound.load();
+		    audioSound.play();    
 		
 	});
 });
@@ -26,8 +30,8 @@ button.forEach(button=>{
 
 
   stopBtn.addEventListener('click', () => {
-  audioPlayer.pause();
-  audioPlayer.currentTime = 0;
+  audioSound.pause();
+  audioSound.currentTime = 0;
 });
-
+</script>
 
