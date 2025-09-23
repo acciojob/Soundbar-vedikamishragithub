@@ -11,7 +11,7 @@ buttons.forEach(button => {
     }
 
     // Create a new audio object and play the sound
-    const soundFile = butt.getAttribute('data-sound');
+    const soundFile = button.getAttribute('data-sound');
     currentSound = new Audio(`sounds/${soundFile}`);
     currentSound.play();
   });
