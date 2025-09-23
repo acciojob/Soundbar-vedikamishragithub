@@ -1,37 +1,25 @@
-<script>
-  const button=document.getElementById('button');
-  const applauseBtn = document.getElementById("applauseBtn");
-  const booBtn = document.getElementById("booBtn");
-  const gaspBtn = document.getElementById("gaspBtn");
-  const tadaBtn = document.getElementById("tadaBtn");
-  const victoryBtn = document.getElementById("victoryBtn");
-  const wrongBtn = document.getElementById("wrongBtn");
-  const stopBtn = document.getElementById("stopBtn");
-
- const audioPlayer = new Audio();
 const buttons = document.querySelectorAll('.btn');
-const currentSound=null;
+const stopBtn = document.getElementById('stopBtn');
+let currentSound = null;
 
-button.forEach(button=>{
-	button.addEventListener('click',()=>{
-        is(currentSound){
-			 audioSound.pause();
-          audioSound.currentTime = 0;
-		} 
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Stop the current sound if it's playing
+    if (currentSound) {
+      currentSound.pause();
+      currentSound.currentTime = 0; // Reset to start
+    }
 
-		    const soundFile = button.getAttribute('data-sound');
-            audioSource.src = `sounds/${soundFile}`;
-		    audioSound.load();
-		    audioSound.play();    
-		
-	});
+    // Create a new audio object and play the sound
+    const soundFile = butt.getAttribute('data-sound');
+    currentSound = new Audio(`sounds/${soundFile}`);
+    currentSound.play();
+  });
 });
 
-
-
-  stopBtn.addEventListener('click', () => {
-  audioSound.pause();
-  audioSound.currentTime = 0;
+stopBtn.addEventListener('click', () => {
+  if (currentSound) {
+    currentSound.pause();
+    currentSound.currentTime = 0; // Reset to start
+  }
 });
-</script>
-
