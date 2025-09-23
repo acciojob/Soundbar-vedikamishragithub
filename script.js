@@ -1,25 +1,19 @@
-const buttons = document.querySelectorAll('.btn');
-const stopBtn = document.getElementById('stopBtn');
-let currentSound = null;
+let currentAudio = null;
 
-buttons.forEach(button => {
+document.querySelectorAll('.btn').forEach(button => {
   button.addEventListener('click', () => {
-    // Stop the current sound if it's playing
-    if (currentSound) {
-      currentSound.pause();
-      currentSound.currentTime = 0; // Reset to start
+    const soundSrc = button.dataset.sound;
+
+    // Stop any currently playing audio
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
     }
 
-    // Create a new audio object and play the sound
-    const soundFile = button.getAttribute('data-sound');
-    currentSound = new Audio(`sounds/${soundFile}`);
-    currentSound.play();
+    // Create and play new audio
+    currentAudio = new Audio(soundSrc);
+    currentAudio.play().catch(err => {
+      console.error("Playback failed:", err);
+    });
   });
-});
-
-stopBtn.addEventListener('click', () => {
-  if (currentSound) {
-    currentSound.pause();
-    currentSound.currentTime = 0; // Reset to start
-  }
 });

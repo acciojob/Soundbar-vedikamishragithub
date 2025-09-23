@@ -1,5 +1,8 @@
 /*  your css code here. If applicable */
-
+*{
+  margin: 0px;
+  padding: 0px;
+}
 #buttons{
   width:100vw;
   height:100vh;
